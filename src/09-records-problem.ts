@@ -8,12 +8,18 @@ type Cache = Record<Keys, string>;
 // TS -> Record
 const myMap = new Map<Keys, string>();
 myMap.set(123, "hello");
+// myMap.keys()
 
 const createCache = () => {
   const cache: Cache = {};
 
+  // cache[null] = "sdfsd"
+
   const add = (id: string, value: string) => {
     cache[id] = value;
+    // cache.kot = '🐈 Cat'
+    // cache.add(id, value)
+    // Object.keys(cache)
   };
 
   const remove = (id: string) => {

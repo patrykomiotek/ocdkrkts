@@ -2,7 +2,7 @@ import { expect, it } from "vitest";
 
 // TODO: write body of a function
 
-const coerceAmount = (amount: number | { amount: number }) => {
+const coerceAmount = (amount: number | { amount: number }): number => {
   if (typeof amount === "object") {
     return amount.amount;
   }
