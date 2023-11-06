@@ -6,21 +6,22 @@ type Params = {
   first: number;
   second: number | undefined;
 };
-// type Params = {
-//   first: number;
-//   second?: number;
-// };
 
-// interface Params {
-//   first: number;
-//   second: number | undefined;
-// };
+type UserDto = {
+  id: string;
+  first: number;
+  second: number;
+  firstName: string;
+  lastName?: string;
+  email: string;
+};
 
-// export const addTwoNumbers = (params: Params) => {
-// export function addTwoNumbers({ first, second = 10 }: Params) {
-
-// }
-// export { addTwoNumbers }
+/* ts-ignore */
+type CreateUserDto = Omit<UserDto, "id" | "firstName">;
+type UpdateUserDto = Pick<UserDto, "firstName" | "lastName" | "email">;
+// type UpdateUserDto = Required<Pick<UserDto, "firstName" | "lastName" | "email">>;
+type UserRequired = Required<UserDto>;
+type UserPartial = Partial<UserDto>;
 
 export const addTwoNumbers = ({ first, second = 10 }: Params) => {
   // return params.first + params.second;
