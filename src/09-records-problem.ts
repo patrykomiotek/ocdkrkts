@@ -4,6 +4,11 @@ import { expect, it } from "vitest";
 type Keys = number | string;
 type Cache = Record<Keys, string>;
 
+// JS -> Set (unique values), Map
+// TS -> Record
+const myMap = new Map<Keys, string>();
+myMap.set(123, "hello");
+
 const createCache = () => {
   const cache: Cache = {};
 
